@@ -1,0 +1,124 @@
+#News-details{
+    margin-top: 10px;
+}
+.News-intern{
+    background-color: rgb(255, 255, 255);
+    width:50%;
+    margin: 30px auto 30px auto;
+   transition: 0.4s ease all;
+    padding:0px 20px 0px 20px;
+    font-size:18px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgb(155, 155, 155);
+}
+.News-intern:hover{
+
+    box-shadow: 0px 2px 10px rgb(97, 97, 97);
+}
+details > summary {
+    outline: none;
+  border: none;
+  cursor: pointer;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size:16px;
+    color:rgb(56, 56, 56);
+
+}
+
+details > p {
+  margin: 0;
+  padding: 15px;
+  font-size:14px;
+  box-shadow:inset 0px 0px 4px rgb(137, 113, 160);
+  margin-bottom: 10px;
+  color:rgb(56, 56, 56);
+
+}
+.read{
+    width:80%;
+    display:block;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(81, 68, 94);
+    color:white;
+    margin:0 auto 0 auto;
+    transition: 0.3s ease all;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 4px 0px 4px 0px;
+    font-size: 16px;
+}
+.read:hover{
+    background-color: rgb(81, 68, 94);
+    text-decoration: none;
+    color:white;
+text-shadow: 2px 2px 2px rgb(50, 42, 58);
+box-shadow: 0px 0px 6px rgb(134, 112, 155);
+}
+.News-intern>h4{
+    font-size: 18px;
+    padding-left: 20px;
+    position: relative;
+    bottom:0.8em;
+   margin:10px auto 10px auto;
+    
+    font-weight: bold;
+    color:rgb(56, 56, 56);
+}
+.News-intern>h5{
+    font-size: 16px;
+    padding-left: 20px;
+    font-weight: bold;
+    color:rgb(56, 56, 56);
+}
+.News-intern>h6{
+    text-align: center;
+    box-shadow:inset 0px -2px 2px rgb(137, 113, 160);
+    letter-spacing: 0.1em;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 20px;
+    margin-bottom: 0;
+    
+}
+.likeComment{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.comment{
+    font-size:40px;
+    margin-left: 3em;
+}
+.comment:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.like{
+    font-size:40px;
+
+   margin-left: 5em;
+    
+}
+.like:active
+{
+    color:aqua;
+    transition: all 0s linear;
+}
+.like:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.CommentBox{
+    display: flex;
+    justify-content: center;
+    
+}
+/* .CommentBox>input{
+
+} */
+@media only screen and (max-width: 800px){
+    .News-intern{
+        width:95%;
+    }
+}
