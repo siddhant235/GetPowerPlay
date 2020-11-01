@@ -18,15 +18,18 @@ const Feed=(props)=>{
     const likes_Counter=(id)=>{
         
         
-        const filterlike=props.like?.filter(post=>post.id===id)
+        // const filterlike=props.like?.filter(post=>post.id===id)
 
-        console.log(filterlike[0]?.count)
-        if(filterlike[0])
-        {
-            setcount(filterlike[0].count+1)
-        }
+        // console.log(filterlike[0]?.count)
+        // if(filterlike[0]?.count)
+        // {
+        //     setcount(filterlike[0]?.count+1)
+        // }
+        // else{
+        //   setcount(0);
+        // }
        
-        console.log(props.like)
+        // console.log(props.like)
         props.onStorelikes(count,id);
 
     }
