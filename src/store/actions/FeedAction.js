@@ -1,21 +1,27 @@
-import * as actioTypes from '../actionTypes';
+import * as actionTypes from '../actionTypes';
 import axios from 'axios';
 export const fetchedData=(data)=>{
     return{
-        type:actioTypes.FETCH_FEEDS,
+        type:actionTypes.FETCH_FEEDS,
         data:data
     }
 }
 export const setLikes=(likeData,id)=>{
     return{
-        type:actioTypes.LIKEDATA,
+        type:actionTypes.LIKEDATA,
         likeData:likeData,
         id:id
     }
 }
+export const SortedData=(sortedData)=>{
+  return{
+    type:actionTypes.SORTEDDATA,
+    sortedData:sortedData
+  }
+}
 export const Comments=(commentData,id)=>{
   return{
-      type:actioTypes.COMMENTDATA,
+      type:actionTypes.COMMENTDATA,
       commentData:commentData,
       id:id
   }

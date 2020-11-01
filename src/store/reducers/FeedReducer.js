@@ -4,6 +4,7 @@ const initialState={
     beers:[],
     likes:[],
     comments:[],
+    sortedData:[],
    
 }
 const fetchbeers=(state,action)=>{
@@ -13,6 +14,12 @@ const fetchbeers=(state,action)=>{
     return updateObject(state,{
        
       beers:updatedBeer
+    })
+}
+const storeSortedData=(state,action)=>{
+  return updateObject(state,
+    {
+      sortedData:action.sortedData
     })
 }
 const likes=(state,action)=>{
@@ -63,6 +70,7 @@ const feedReducer=(state=initialState,action)=>{
         case actionTypes.FETCH_FEEDS:return fetchbeers(state,action);
         case actionTypes.LIKEDATA:return likes(state,action);
         case actionTypes.COMMENTDATA:return comments(state,action);
+        case actionTypes.SORTEDDATA:return storeSortedData(state,action);
         default:return state;
     }
 }

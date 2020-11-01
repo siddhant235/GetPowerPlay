@@ -2,32 +2,32 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './Feeds.css'
 import * as FeedAction from '../../store/actions/FeedAction'
-import Button from 'react-bootstrap/Button';
 
 const Feed=(props)=>{
-    const[like,setlike]=React.useState(0)
     const[comment,setcomment]=React.useState('');
-    const [count,setcount]=React.useState('')
+    const [count,setcount]=React.useState(1)
     const[showComment,setShowComment]=React.useState(true);
     React.useEffect(()=>{
         props.onfetchbeer();
        setInterval(()=>{
         props.onfetchbeer();
        },5000) 
+    
     },[])
    
-    const likes_Counter=(likes,id)=>{
+    const likes_Counter=(id)=>{
         
-        likes=likes+1;
+        
         const filterlike=props.like?.filter(post=>post.id===id)
+
         console.log(filterlike[0]?.count)
         if(filterlike[0])
         {
-            setcount(filterlike[0].count)
+            setcount(filterlike[0].count+1)
         }
-        setlike(likes);
+       
         console.log(props.like)
-        props.onStorelikes(likes,id);
+        props.onStorelikes(count,id);
 
     }
     const comments=(commentData,id)=>{
@@ -51,7 +51,7 @@ const Feed=(props)=>{
               <h6>{info.name}</h6>
               <div style={{}}>
         <h4><br/>{info.tagline}</h4>
-        <p className="like" style={{marginLeft:'13.5em'}} onClick={()=>likes_Counter(like,info.id)}><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>{filterlike[0]?.count}</p>
+        <p className="like" style={{marginLeft:'13.5em'}} onClick={()=>likes_Counter(info.id)}><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>{filterlike[0]?.count}</p>
         </div>
         <details>
                 <summary>Content :</summary>
@@ -60,7 +60,7 @@ const Feed=(props)=>{
                 </p>
               </details>
             
-        <img src={info.image_url} alt="imag" style={{height:"200px",width:"200px",margin:"auto",display:"flex",justifyContent:'center'}}/>
+        <img src={info.image_url?info.image_url:"https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101032/112815935-stock-vector-no-image-available-icon-flat-vector-illustration.jpg?ver=6"} alt="imag" style={{height:"200px",width:"200px",margin:"auto",display:"flex",justifyContent:'center'}}/>
        
       
               {/* <a className="read" href={info.url} target="_blank">

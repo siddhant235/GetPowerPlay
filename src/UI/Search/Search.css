@@ -1,0 +1,89 @@
+.Search {
+    display: flex;
+    justify-content: center;
+    margin:10px auto;
+  }
+  
+  .Search input {
+    position: absolute;
+    outline: none;
+    margin-bottom: 100%;
+    color: #a4a4a4;
+    height: 3rem;
+    border-radius: 30px 30px 30px 30px;
+    overflow: visible;
+    border-style: solid;
+    width: 30rem;
+    padding-right: 20rem;
+    box-shadow: none;
+    border-width: 0.009ch;
+    border-color: #a4a4a4;
+  
+    font-size: 17px;
+    background: none;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0.8rem;
+  
+    font-family: Rubik, Arial, Helvetica, sans-serif;
+  
+    text-align: left;
+  }
+  .icon a i {
+    position: absolute;
+    font-size: 20px;
+    margin-left: 9.9em;
+   bottom:33.75em;
+   
+    background: #0b1357;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    box-sizing: border-box;
+    line-height: 40px;
+    outline: none;
+border-radius: 50%;
+  
+    text-align: center;
+  
+    width: 38px;
+  }
+  .icon a i:hover {
+    background: #bb723e;
+    cursor: pointer;
+  }
+  
+  .search-box {
+    position: relative;
+    top: 3rem;
+    left: 1rem;
+    height: 200px;
+    overflow: auto;
+    z-index: 9967;
+    transition: all 0.5s ease;
+  }
+  .search-box a {
+    background-color: #ffff;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 10px #8888;
+    display: grid;
+    
+   
+    grid-template-columns: 360px;
+    text-decoration: none;
+    font-weight: 550;
+    padding: 10px 30px;
+    color: black;
+  }
+  .search-box a:hover {
+    color: #bb723e;
+  }
+  .active{
+    color:blue;
+  }

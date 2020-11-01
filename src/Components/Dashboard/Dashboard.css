@@ -18,12 +18,19 @@
 }
 .Grid_View{
     display: inline-grid;
-    background-color: #fff;
-    margin:10px auto;
-    box-shadow:'2px 5px #999'
+    grid-template-columns: auto auto auto;
+    margin-left: 10rem;
+    margin-top: 40px;
+    
+}
+.list_View{
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto;
+    margin-left: 10rem;
+    margin-top: 40px;
 }
 
-.Grid_View>p:hover{
+.Grid_View:hover{
     cursor: pointer;
 }
 .List_View>p{

@@ -6,7 +6,7 @@ import thunk from 'redux-thunk'
 import FeedReducer from './store/reducers/FeedReducer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Provider} from 'react-redux'
-import {persistStore,persistReducer,createMigrate} from 'redux-persist';
+import {persistStore,persistReducer} from 'redux-persist';
 import storageSession from 'redux-persist/lib/storage/session'
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import reportWebVitals from './reportWebVitals';
