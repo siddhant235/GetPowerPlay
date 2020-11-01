@@ -3,6 +3,7 @@ import { updateObject } from '../utility'
 const initialState={
     beers:[],
     likes:[],
+    comments:[],
    
 }
 const fetchbeers=(state,action)=>{
@@ -35,11 +36,33 @@ const likes=(state,action)=>{
       
   })
 }
+const comments=(state,action)=>{
+  let commentupdate={
+    id:action.id,
+    comment:[action.commentData]
+}
+const comment_post = [...state.comments];
+let obj = comment_post.find((x) => x.id === action.id);
+
+if (obj) {
+let index = comment_post.indexOf(obj);
+comment_post[index].comment =[...comment_post[index].comment ,action.commentData] ;
+
+} else {
+comment_post.push(commentupdate);
+
+}
+return updateObject(state,{
+  comments:comment_post,
+  
+})    
+}
 const feedReducer=(state=initialState,action)=>{
     switch(action.type)
     {
         case actionTypes.FETCH_FEEDS:return fetchbeers(state,action);
-        case actionTypes.LIKEDATA:return likes(state,action)
+        case actionTypes.LIKEDATA:return likes(state,action);
+        case actionTypes.COMMENTDATA:return comments(state,action);
         default:return state;
     }
 }

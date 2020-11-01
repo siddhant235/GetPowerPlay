@@ -13,6 +13,13 @@ export const setLikes=(likeData,id)=>{
         id:id
     }
 }
+export const Comments=(commentData,id)=>{
+  return{
+      type:actioTypes.COMMENTDATA,
+      commentData:commentData,
+      id:id
+  }
+}
 export const fetchBeers=()=>{
     return dispatch=>{
         var apiBaseUrl = `https://api.punkapi.com/v2/beers/random`;

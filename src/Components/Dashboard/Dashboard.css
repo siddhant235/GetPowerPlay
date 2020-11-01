@@ -1,0 +1,31 @@
+.icon{
+    display: flex;
+    justify-content: center;
+
+    margin:20px auto 10px auto;
+}
+.icon>i{
+    font-size: 30px;
+    margin:10px;
+    border-radius: 5px 5px 5px 5px;
+    width:50px;
+    box-sizing: border-box;
+    /* color:brown */
+}
+.icon>i:hover{
+    cursor: pointer;
+    color: brown;
+}
+.Grid_View{
+    display: inline-grid;
+    background-color: #fff;
+    margin:10px auto;
+    box-shadow:'2px 5px #999'
+}
+
+.Grid_View>p:hover{
+    cursor: pointer;
+}
+.List_View>p{
+    display: flex;
+}
