@@ -5,15 +5,17 @@ const initialState={
     likes:[],
     comments:[],
     sortedData:[],
+    id:''
    
 }
 const fetchbeers=(state,action)=>{
     const updatedBeer = [action.data[0],...state.beers];
     // const Beerfinal = updatedBeer.concat(action.data[0]);
-    console.log(updatedBeer)
+    console.log(action.id)
     return updateObject(state,{
        
-      beers:updatedBeer
+      beers:updatedBeer,
+      id:action.id
     })
 }
 const storeSortedData=(state,action)=>{

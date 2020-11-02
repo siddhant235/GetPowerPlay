@@ -18,8 +18,8 @@ const Dashboard = (props) => {
     const [Beer,setBeer]=React.useState([]);
     React.useEffect(() => {
         const a3 = props.like.map(t1 => ({...t1, ...props.beers.find(t2 => t2.id === t1.id)}))
-        const a4=a3.map(t1 => ({...t1, ...props.beers.find(t2 => t2.id!== t1.id)}))
-       
+        const a4=props.like.map(t1 => ({...t1, ...props.beers.find(t2 => t2.id!== t1.id)}))
+        const a5=a3.concat(a4);
         setBeer(a3);
         const compare = (a, b) => {
           
@@ -34,9 +34,8 @@ const Dashboard = (props) => {
             }
             return comparison;
         }
-        const a5=a3?.sort(compare);
-        // const a6=a5.concat(a4);
-        props.onSortedData(a5);
+  
+        props.onSortedData(a3?.sort(compare));
 
 
     }, [props.like])
@@ -78,7 +77,7 @@ const Dashboard = (props) => {
             {props.sortedData?.map((item) => {
                 const filterlike = props.like?.filter(post => post.id === item.id)
                 const Filtered = sortedBeers?.filter(post => post.id === item.id)
-                console.log(props.sortedData)
+                console.log(props.beers)
                 return (<>
                     { grid && (
                         <div className="Grid_View" onClick={() => showdetails(true, item.id)}>
@@ -96,6 +95,32 @@ const Dashboard = (props) => {
                     )}
                 </>)
             })}
+            {
+                
+        //         props.beers?.map((item) => {
+        //             const filter=props.sortedData.filter(post=>post.id===item.id)
+        //       const filterlike = props.like?.filter(post => post.id === item.id)
+        //       const Filtered = sortedBeers?.filter(post => post.id === item.id)
+        //       console.log(filter);
+           
+        //       return (<>
+        //           { grid && (
+        //               <div className="Grid_View" onClick={() => showdetails(true, item.id)}>
+
+        //                   <Card name={item.name} image={item.image_url} like={filterlike[0]?.count} firstbrew={firstbrew} />
+
+        //               </div>
+        //           )}
+        //           {list && (
+        //               <div className="list_view">
+        //                   <p>
+        //                       <Card name={item.name} image={item.image_url} like={filterlike[0]?.count} />
+        //                   </p>
+        //               </div>
+        //           )}
+        //       </>)
+        //   })  
+            }
 
             {details ?
                 <Modal show={details} onHide={() => setdetails(false)}>

@@ -1,9 +1,10 @@
 import * as actionTypes from '../actionTypes';
 import axios from 'axios';
-export const fetchedData=(data)=>{
+export const fetchedData=(data,id)=>{
     return{
         type:actionTypes.FETCH_FEEDS,
-        data:data
+        data:data,
+        id:id
     }
 }
 export const setLikes=(likeData,id)=>{
@@ -33,8 +34,8 @@ export const fetchBeers=()=>{
           axios
             .get(apiBaseUrl)
             .then((response) => {
-              dispatch(fetchedData(response.data))
-                console.log(response.data);
+              dispatch(fetchedData(response.data,response.data[0].id))
+                console.log(response.status);
             
                 
               

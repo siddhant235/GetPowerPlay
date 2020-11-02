@@ -12,24 +12,14 @@ const Feed=(props)=>{
        setInterval(()=>{
         props.onfetchbeer();
        },5000) 
+
     
     },[])
    
     const likes_Counter=(id)=>{
         
         
-        // const filterlike=props.like?.filter(post=>post.id===id)
-
-        // console.log(filterlike[0]?.count)
-        // if(filterlike[0]?.count)
-        // {
-        //     setcount(filterlike[0]?.count+1)
-        // }
-        // else{
-        //   setcount(0);
-        // }
-       
-        // console.log(props.like)
+      
         props.onStorelikes(count,id);
 
     }
@@ -48,13 +38,13 @@ const Feed=(props)=>{
         const filterComment=props.comments?.filter(post=>post.id===info.id)
          
         return (
-          <div id="Post-details">
+          <div id="Post-details" key={info.id}>
             <div className="Post-intern">
                 
               <h6>{info.name}</h6>
               <div style={{}}>
         <h4><br/>{info.tagline}</h4>
-        <p className="like" style={{marginLeft:'13.5em'}} onClick={()=>likes_Counter(info.id)}><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>{filterlike[0]?.count}</p>
+        <p className="like" style={{marginLeft:'15.5em'}} onClick={()=>likes_Counter(info.id)}>{filterlike[0]?.count}&nbsp;<i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
         </div>
         <details>
                 <summary>Content :</summary>
@@ -77,7 +67,7 @@ const Feed=(props)=>{
             
             </div>
           { showComment &&(<div>
-              <div className="CommentBox">
+              <div className="CommentBox" key={info.id}>
               <p  className="comment"><i class="fa fa-comments-o" aria-hidden="true"></i></p>
                 <input type="text" value={comment} placeholder="Your thoughts......" style={{borderRadius:"20px",outline:"none"}}
                   onChange={(event)=>setcomment(event.target.value)}
@@ -109,7 +99,8 @@ const mapStateToProps=(state)=>{
         beers:state.feed.beers,
         like:state.feed.likes,
         count:state.feed.counts,
-        comments:state.feed.comments
+        comments:state.feed.comments,
+        id:state.feed.id
     }
 }
 const mapDispatchToProps=(dispatch)=>{
